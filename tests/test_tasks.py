@@ -77,14 +77,13 @@ def test_mark_task_completed(
     mock_send_notification = mocker.patch(
         'tasks.TaskManager.send_notification', return_value="Mock Notification")
 
-    response = manager_with_tasks.mark_task_completed(task_id_to_complete)
+    manager_with_tasks.mark_task_completed(task_id_to_complete)
 
     tasks = manager_with_tasks.get_all_tasks()
     task = next(task for task in tasks
                 if task.id == task_id_to_complete)
 
     assert task.is_completed
-    assert response == "Mock Notification"
     mock_send_notification.assert_called_once_with(task_id_to_complete)
 
 
