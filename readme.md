@@ -23,10 +23,14 @@ Este proyecto consiste en construir una **API de gestión de tareas (To-Do List)
 
 - **Clase `TaskManager`:** Se encargará de gestionar las tareas (añadir, eliminar, completar).
   - Métodos:
+    - `generate_id()`: Genera un ID único para una nueva tarea.
     - `add_task(description)`: Agrega una nueva tarea a la lista.
     - `remove_task(id)`: Elimina una tarea existente.
     - `get_all_tasks()`: Devuelve la lista de tareas.
     - `mark_task_completed(id)`: Marca una tarea como completada.
+    - `get_task_by_id(id)`: Obtiene una tarea por su ID.
+    - `update_task(id, new_description)`: Actualiza la descripción de una tarea existente.
+    - `send_removed_notification(id)`: Envía una notificación al usuario cuando se elimina una tarea.
 
 
 ## Lista de Pruebas para el Proyecto de Gestión de Tareas
